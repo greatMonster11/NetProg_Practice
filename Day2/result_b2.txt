@@ -1,0 +1,60 @@
+Trying 172.18.54.56...
+Connected to 172.18.54.56.
+Escape character is '^]'.
+s
+s
+w
+w
+r
+r
+t
+t
+hell
+hell
+
+java EchoClient 172.18.54.56 8080
+hello
+hello
+blah
+blah
+quit
+quit
+
+
+java EchoServer 2019 
+
+java EchoClient 127.0.0.1 2019
+hello
+hello
+blah
+blah
+blasss
+blasss
+quit
+quit
+
+java PTCPEchoServer 2019
+Processing Error: java.net.SocketException: Connection reset
+Processing Error: java.net.SocketException: Connection reset
+
+java EchoClient 127.0.0.1 2019
+echo 
+echo 
+bask
+bask
+et
+et
+ball
+ball
+quit
+quit
+
+java EchoClient 127.0.0.1 2019
+heleelo
+heleelo
+what
+what
+echo
+echo
+quit
+quit
