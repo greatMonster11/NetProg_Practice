@@ -19,15 +19,16 @@ public class ChatbotServer {
             int PORT = Integer.valueOf(argv[0]).intValue();
             ServerSocket ss = new ServerSocket(PORT);
             // create infinite loop that waiting for connection
+            System.out.println("Welcome to JBot");
             while (true) {
                 Socket s = ss.accept();
                 BufferedReader br = new BufferedReader(new InputStreamReader(s.getInputStream()));
                 PrintWriter pw = new PrintWriter((s.getOutputStream()));
-                String q, a;
-                System.out.println("Welcome to JBot");
+                String q = "", a = "";
                 while (true) {
                     // get 1 question from client
                     q = br.readLine();
+                    System.out.println(q);
                     boolean find = qa.containsKey(q);
                     if (find == true)
                         a = qa.get(q);
