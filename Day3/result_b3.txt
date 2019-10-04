@@ -1,0 +1,32 @@
+Bai 5: 
+
+>>>> Server 
+D:\B1610669>java UDPEchoServer 9999
+Da khoi tao UPD Socket
+>>> Client
+D:\B1610669>java UDPEchoClient 127.0.0.1 9999
+hello
+hello
+from client
+from client
+from client
+
+
+Bai 6:
+
+>>> Server
+D:\B1610669>java TCPChatServer 9999 sang
+New client request received : Socket[addr=/127.0.0.1,port=8729,localport=9999]
+Creating a new handler for this client...
+sang: hello
+chao ban
+ban co nghe tui noi hong
+sang: tui nghe roi
+
+
+>>> Client
+D:\B1610669>java TCPChatClient 127.0.0.1 9999 sang
+hello
+sang: chao ban
+sang: ban co nghe tui noi hong
+tui nghe roi
