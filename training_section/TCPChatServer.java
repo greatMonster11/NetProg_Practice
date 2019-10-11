@@ -28,7 +28,7 @@ public class TCPChatServer {
                     // get 1 text from keyboard
                     serverTxt = keyboard.readLine();
                     // write answer to client
-                    pw.println("Server >>>> " + serverTxt);
+                    pw.println("Server >>>> " + ServerTxt);
                     pw.flush();
                     if (clientTxt.equals("bye"))
                         break;
