@@ -1,0 +1,39 @@
+### Bai 8 ###
+220 localhost ESMTP Postfix (Ubuntu)
+HELO server
+250 localhost
+MAIL FROM:user1
+250 2.1.0 Ok
+RCPT TO:user2
+250 2.1.5 Ok
+DATA
+354 End data with <CR><LF>.<CR><LF>
+DATA:
+hom nay toi lam kiem tra mon lap trinh truyen thong
+
+.
+250 2.0.0 Ok: queued as 76E4E1E0D14
+QUIT
+221 2.0.0 Bye
+
+
+Connection to host lost.
+
+### Bai 9 ###
+D:\NetProg_Practice-master\NetProg_Practice-master\Day4>java SMTPClient 172.18.5
+4.56 25 user1 user2
+172.18.54.56
+220 localhost ESMTP Postfix (Ubuntu)
+250 localhost
+250 2.1.0 Ok
+250 2.1.5 Ok
+Enter your message, '.' for the end:
+subject: hello
+How do you do, user2 ?
+.
+354 End data with <CR><LF>.<CR><LF>
+250 2.0.0 Ok: queued as 832821E0D09
+
+
+
+
