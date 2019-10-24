@@ -8,7 +8,7 @@ public class Pop3Client {
       return;
     }
     int PORT = Integer.valueOf(args[1]).intValue();
-    System.out.println(args[0]);
+    // System.out.println(args[0]);
     try {
       Socket s = new Socket(args[0], PORT);
       BufferedReader br = new BufferedReader(new InputStreamReader(s.getInputStream()));
@@ -32,7 +32,19 @@ public class Pop3Client {
       System.out.println(respone);
 
       // Need to checkout for failed authentication above
+      if (!respone.startsWith("+OK")) {
+        System.out.println("Authenticate failed, please try again !");
+        s.close();
+        return;
+      }
 
+      // Find out how many message that are available
+      pw.println("LIST");
+      pw.flush();
+      respone = br.readLine();
+      System.out.println(respone);
+
+      // Retrive the message by number
       System.out.println("Enter message number, 0 for the end: ");
       int messageNum = 0;
       while ((messageNum = Integer.valueOf(key.readLine()).intValue()) != 0) {
