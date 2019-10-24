@@ -8,7 +8,7 @@ public class Pop3Client {
       return;
     }
     int PORT = Integer.valueOf(args[1]).intValue();
-	System.out.println(args[0]);
+    System.out.println(args[0]);
     try {
       Socket s = new Socket(args[0], PORT);
       BufferedReader br = new BufferedReader(new InputStreamReader(s.getInputStream()));
@@ -23,33 +23,34 @@ public class Pop3Client {
       pw.println("USER " + args[2]);
       pw.flush();
       respone = br.readLine();
-	  System.out.println(respone);
+      System.out.println(respone);
 
       // Authenticate with password belong to user above
       pw.println("PASS " + args[3]);
       pw.flush();
       respone = br.readLine();
-	  System.out.println(respone);
-      
-      
-	  System.out.println("Enter message number, 0 for the end: ");
-	  int messageNum = 0;
-	  while ((messageNum = Integer.valueOf(key.readLine()).intValue()) != 0) {
-			pw.println("RETR " + messageNum);
-			pw.flush();
-			// render the data return from server
-			respone = br.readLine();
-			System.out.println(respone);
-			
-	  }
+      System.out.println(respone);
+
+      // Need to checkout for failed authentication above
+
+      System.out.println("Enter message number, 0 for the end: ");
+      int messageNum = 0;
+      while ((messageNum = Integer.valueOf(key.readLine()).intValue()) != 0) {
+        pw.println("RETR " + messageNum);
+        pw.flush();
+        // render the data return from server
+        respone = br.readLine();
+        System.out.println(respone);
+      }
 
       respone = br.readLine();
-	  System.out.println(respone);
-	  
+      System.out.println(respone);
+
       pw.println("QUIT");
-      pw.flush();respone = br.readLine();
-	  System.out.println(respone);
-	  s.close();
+      pw.flush();
+      respone = br.readLine();
+      System.out.println(respone);
+      s.close();
 
     } catch (IOException e) {
       System.out.println(e);

@@ -8,7 +8,7 @@ public class SMTPClient {
       return;
     }
     int PORT = Integer.valueOf(args[1]).intValue();
-	System.out.println(args[0]);
+    System.out.println(args[0]);
     try {
       Socket s = new Socket(args[0], PORT);
       BufferedReader br = new BufferedReader(new InputStreamReader(s.getInputStream()));
@@ -23,46 +23,47 @@ public class SMTPClient {
       pw.println("HELO server");
       pw.flush();
       respone = br.readLine();
-	  System.out.println(respone);
+      System.out.println(respone);
 
       // Send MAIL FROM command
       pw.println("MAIL FROM: " + args[2]);
       pw.flush();
       respone = br.readLine();
-	  System.out.println(respone);
-      
+      System.out.println(respone);
+
       // Send RECP TO command
       pw.println("RCPT TO: " + args[3]);
       pw.flush();
       respone = br.readLine();
-	  System.out.println(respone);
-      
+      System.out.println(respone);
+
       // Send DATA command
       pw.println("DATA");
-	  pw.flush();
-      
-	  System.out.println("Enter your message, '.' for the end: ");
-	  String messageData = null;
-	  while ((messageData = key.readLine()) != null) {
-			if (messageData.equals(".")) {
-				break;
-			}	
-		// System.out.println("from key: " + messageData);
-			else {	
-				pw.println(messageData);
-				pw.flush();
-			}	
-	  }
-		pw.println("\r\n" + "." + "\r\n");
-		pw.flush();
+      pw.flush();
+
+      System.out.println("Enter your message, '.' for the end: ");
+      String messageData = null;
+      while ((messageData = key.readLine()) != null) {
+        if (messageData.equals(".")) {
+          break;
+        }
+        // System.out.println("from key: " + messageData);
+        else {
+          pw.println(messageData);
+          pw.flush();
+        }
+      }
+      pw.println("\r\n" + "." + "\r\n");
+      pw.flush();
 
       respone = br.readLine();
-	  System.out.println(respone);
-	  
+      System.out.println(respone);
+
       pw.println("QUIT");
-      pw.flush();respone = br.readLine();
-	  System.out.println(respone);
-	  s.close();
+      pw.flush();
+      respone = br.readLine();
+      System.out.println(respone);
+      s.close();
 
     } catch (IOException e) {
       System.out.println(e);

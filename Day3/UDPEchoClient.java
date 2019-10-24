@@ -4,7 +4,7 @@ import java.net.*;
 public class UDPEchoClient {
 	public static void main(String[] args) {
 		try {
-			if(args.length < 2) {
+			if (args.length < 2) {
 				System.out.println("Usage: UDPEchoClient <host name> <PORT>");
 				return;
 			}
@@ -13,14 +13,14 @@ public class UDPEchoClient {
 			DatagramSocket ds = new DatagramSocket();
 			// Server Address
 			InetAddress server = InetAddress.getByName(args[0]);
-			while(true) {
+			while (true) {
 				BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 				String theString = br.readLine(); // from keyboard
 				// Convert into bytes
 				byte[] data = theString.getBytes();
 				// Create massage pack
 				DatagramPacket dp = new DatagramPacket(data, data.length, server, PORT);
-				ds.send(dp); //  send message to server
+				ds.send(dp); // send message to server
 				// Create buffer for sending message
 				byte[] buffer = new byte[6000];
 				// Create pack to receive message
@@ -33,5 +33,5 @@ public class UDPEchoClient {
 			System.out.println(e);
 		}
 	}
-	
+
 }
