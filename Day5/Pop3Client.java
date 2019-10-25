@@ -1,0 +1,78 @@
+import java.io.*;
+import java.net.*;
+
+public class Pop3Client {
+  public static void main(String[] args) {
+    if (args.length < 4) {
+      System.out.println("Usage: Pop3Client <server mail> <PORT> <username> <password>");
+      return;
+    }
+    int PORT = Integer.valueOf(args[1]).intValue();
+    // System.out.println(args[0]);
+    try {
+      Socket s = new Socket(args[0], PORT);
+      BufferedReader br = new BufferedReader(new InputStreamReader(s.getInputStream()));
+      BufferedReader key = new BufferedReader((new InputStreamReader(System.in)));
+      PrintWriter pw = new PrintWriter(s.getOutputStream());
+
+      // Read greeting from server
+      String respone = br.readLine();
+      System.out.println(respone);
+
+      // Give a username
+      pw.println("USER " + args[2]);
+      pw.flush();
+      respone = br.readLine();
+      System.out.println(respone);
+
+      // Authenticate with password belong to user above
+      pw.println("PASS " + args[3]);
+      pw.flush();
+      respone = br.readLine();
+      System.out.println(respone);
+
+      // Need to checkout for failed authentication above
+      if (!respone.startsWith("+OK")) {
+        System.out.println("Authenticate failed, please try again !");
+        s.close();
+        return;
+      }
+
+      // Find out how many message that are available
+      pw.println("LIST");
+      pw.flush();
+			while(!respone.equals(".")) {
+					  respone = br.readLine();
+				  		System.out.println(respone);
+			}
+      // Retrive the message by number
+      int messageNum = 0;
+			
+    	while (true) {
+				System.out.print("Enter message number, 0 for the end: ");
+				messageNum = Integer.valueOf(key.readLine()).intValue();
+				if(messageNum == 0) break;
+				
+        pw.println("RETR " + messageNum);
+        pw.flush();
+        // render the data return from server
+ 				respone = br.readLine();
+      	while(!respone.equals(".")) {
+					
+      		System.out.println(respone);
+	      	respone = br.readLine();
+				}
+				
+      }
+			
+      pw.println("QUIT");
+      pw.flush();
+      respone = br.readLine();
+      System.out.println(respone);
+      s.close();
+
+    } catch (IOException e) {
+      System.out.println(e);
+    }
+  }
+}
