@@ -4,13 +4,13 @@ import java.net.MalformedURLException;
 public class HelloServer {
 	public static void main(String[] agrs) {
 		if (System.getSecurityManager() == null) // Cai dat co che bao mat
-			System.setSecurityManager(new RMISecurityManager());
+			System.setSecurityManager(new SecurityManager());
 		try {
 			// Tao ra doi tuong cho phep goi tu xa
 			Hello obj = new Hello();
 			System.out.println("Tao duoc doi tuong cho phep goi tu xa");
 			// Dang ki doi tuong
-			Naming.rebind("HelloObj", obj);
+			Naming.rebind("HelloObject", obj);
 			System.out.println("Dang ki ten doi tuong thanh cong");
 		} catch (RemoteException e) {
 			System.out.println("Loi khong the tao doi tuong tu xa");
