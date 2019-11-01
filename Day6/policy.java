@@ -46,4 +46,3 @@ grant {
         permission java.util.PropertyPermission "java.vm.vendor", "read";
         permission java.util.PropertyPermission "java.vm.name", "read";
 };
-
