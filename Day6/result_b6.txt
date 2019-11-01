@@ -1,0 +1,78 @@
+D:\Day5>javac LamToan.java LamToanItf.java LamToanClient.java LamToanServer.java
+
+Note: LamToanServer.java uses or overrides a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+
+D:\Day5>rmic LamToan.class
+Warning: generation and use of skeletons and static stubs for JRMP
+is deprecated. Skeletons are unnecessary, and static stubs have
+been superseded by dynamically generated stubs. Users are
+encouraged to migrate away from using rmic to generate skeletons and static
+stubs. See the documentation for java.rmi.server.UnicastRemoteObject.
+error: Class LamToan$class not found.
+1 error
+
+D:\Day5>start rmiregistry
+
+D:\Day5>java -Djava.security.policy=file://D:/Day5/policy.java LamToanServer
+Tao duoc doi tuong cho phep goi tu xa
+Dang ki doi tuong de goi tu xa thanh cong !!!
+
+
+###### Bai 1 - 3 ######
+
+D:\Day5>java LamToanClient localhost
+Tao duoc doi tuong cho phep goi tu xa
+1. Giai phuong trinh bac nhat
+2. Tinh ky vong - phuong sai cua day so
+3. Nhan 2 ma tran
+Select your option - (0) for the end of process: 3
+Nhap vao gia tri m: 2
+Nhap vao gia tri n: 3
+Nhap vao gia tri p: 2
+Nhap gia tri cho ma tran a
+Nhap phan tu [0][0]
+2
+Nhap phan tu [0][1]
+3
+Nhap phan tu [0][2]
+4
+Nhap phan tu [1][0]
+1
+Nhap phan tu [1][1]
+0
+Nhap phan tu [1][2]
+0
+
+Nhap gia tri cho ma tran b
+Nhap phan tu [0][0]
+0
+Nhap phan tu [0][1]
+1000
+Nhap phan tu [1][0]
+1
+Nhap phan tu [1][1]
+100
+Nhap phan tu [2][0]
+0
+Nhap phan tu [2][1]
+10
+
+Tich cua 2 ma tran a va b la:
+Nhap phan tu [0][0] = 3
+Nhap phan tu [0][1] = 2340
+Nhap phan tu [1][0] = 0
+Nhap phan tu [1][1] = 1000
+
+
+1. Giai phuong trinh bac nhat
+2. Tinh ky vong - phuong sai cua day so
+3. Nhan 2 ma tran
+Select your option - (0) for the end of process: 1
+Nhap he so a: 2
+Nhap he so b: -4
+Ket qua cua phuong trinh tren la: 2.0
+
+1. Giai phuong trinh bac nhat
+2. Tinh ky vong - phuong sai cua day so
+3. Nhan 2 ma tran
