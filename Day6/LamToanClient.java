@@ -128,7 +128,7 @@ public class LamToanClient {
 		try {
 			for (int i = 0; i < array.length; i++) {
 				for (int j = 0; j < array[i].length; j++) {
-					System.out.println("Nhap phan tu [" + i + "][" + j + "]");
+					System.out.print("Nhap phan tu [" + i + "][" + j + "]");
 					array[i][j] = Integer.valueOf(key.readLine()).intValue();
 
 				}
@@ -143,7 +143,7 @@ public class LamToanClient {
 	public static void output(int array[][]) {
 		for (int i = 0; i < array.length; i++) {
 			for (int j = 0; j < array[i].length; j++) {
-				System.out.print("Nhap phan tu [" + i + "][" + j + "]");
+				System.out.print("Phan tu [" + i + "][" + j + "]");
 				System.out.println(" = " + array[i][j]);
 			}
 		}
@@ -151,7 +151,7 @@ public class LamToanClient {
 
 	public static void KVPSArr(BufferedReader key, LamToanItf t) {
 		int n;
-		double reuslt[] = new double[2];
+		double result[] = new double[2];
 
 		try {
 			System.out.print("Nhap vao so phan tu cua day so: ");
@@ -159,13 +159,13 @@ public class LamToanClient {
 			int arr[] = new int[n]; // Khoi tao mang so nguyen
 
 			for (int i = 0; i < n; i++) {
-				System.out.print("Nhap gia tri cho phan tu: " + (i + 1));
+				System.out.print("Nhap gia tri cho phan tu " + (i + 1) + ": ");
 				arr[i] = Integer.valueOf(key.readLine()).intValue();
 			}
 
 			// Goi thu tuc tu xa
 			result = t.KVPS(arr, n);
-			System.out.println("Ky vong cho day so la" + result[0]);
+			System.out.println("Ky vong cho day so la: " + result[0]);
 			System.out.println("Phuong sai cua day so la: " + result[1]);
 
 			return;

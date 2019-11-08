@@ -76,3 +76,24 @@ Ket qua cua phuong trinh tren la: 2.0
 1. Giai phuong trinh bac nhat
 2. Tinh ky vong - phuong sai cua day so
 3. Nhan 2 ma tran
+
+#### Bai 2 ####
+
+D:\Day6>java LamToanClient localhost
+Tao duoc doi tuong cho phep goi tu xa
+1. Giai phuong trinh bac nhat
+2. Tinh ky vong - phuong sai cua day so
+3. Nhan 2 ma tran
+Select your option - (0) for the end of process: 2
+Nhap vao so phan tu cua day so: 4
+Nhap gia tri cho phan tu 1: 1
+Nhap gia tri cho phan tu 2: 3
+Nhap gia tri cho phan tu 3: 6
+Nhap gia tri cho phan tu 4: 7
+Ky vong cho day so la: 4.0
+Phuong sai cua day so la: 16.0
+
+1. Giai phuong trinh bac nhat
+2. Tinh ky vong - phuong sai cua day so
+3. Nhan 2 ma tran
+Select your option - (0) for the end of process:

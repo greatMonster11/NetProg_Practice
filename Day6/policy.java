@@ -1,4 +1,3 @@
-
 // Standard extensions get all permissions by default
 
 grant codeBase "file:${{java.ext.dirs}}/*" {

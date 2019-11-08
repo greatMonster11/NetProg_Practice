@@ -29,7 +29,7 @@ public class LamToan extends UnicastRemoteObject implements LamToanItf {
 	// Tim ki vong - phuong sai cua mot day so
 	public double[] KVPS(int a[], int n) throws RemoteException {
 		int sum = 0;
-		double reult[] = new double[2];
+		double result[] = new double[2];
 		double kv, ps;
 
 		for (int i = 0; i < n; i++) {
