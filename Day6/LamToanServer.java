@@ -5,11 +5,12 @@ import java.io.*;
 public class LamToanServer {
 	public static void main(String[] args) {
 		// Cai dat co che bao mat
+		// This is asually won't work on Linux System
 		if (System.getSecurityManager() == null)
 			System.setSecurityManager(new RMISecurityManager());
 
 		try {
-			// Toa doi tuong cho phep goi ham tu xa
+			// Tao doi tuong cho phep goi ham tu xa
 			LamToan obj = new LamToan();
 			LamToan obj2 = new LamToan();
 			LamToan obj3 = new LamToan();

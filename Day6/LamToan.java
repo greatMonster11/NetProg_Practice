@@ -12,7 +12,7 @@ public class LamToan extends UnicastRemoteObject implements LamToanItf {
 		return -b / a;
 	}
 
-	// Nhan hai ma tran voi
+	// Nhan hai ma tran
 	public int[][] nhanMT(int a[][], int b[][], int m, int n, int p) throws RemoteException {
 		int result[][] = new int[m][p];
 
