@@ -3,9 +3,14 @@ import java.rmi.server.UnicastRemoteObject;
 
 public class LamToan extends UnicastRemoteObject implements LamToanItf {
 	// Ham xay dung
+
 	public LamToan() throws RemoteException {
 		super();
 	}
+
+    public sayHello() throws RemoteException {
+        return "Hello World";
+    }
 
 	// Ham giai phuong trinh bac nhat
 	public double giaiPTB1(double a, double b) throws RemoteException {
